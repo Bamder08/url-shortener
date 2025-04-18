@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Shortener</title>
-  <link href="./output.css" rel="stylesheet">
-</head>
-<body>
-  <h1 class="text-3xl font-bold text-blue-600">¡Funciona Tailwind!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+
+    <!--Navbar-->
+    <nav class="bg-gray-800 px-4 py-3 flex items-center">
+      <a href="/" aria-label="Inicio" class="text-white text-xl font-bold"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </a>
+      <div class="ml-auto flex space-x-6">
+        <a href="/sobreMi" class="text-white hover:bg-gray-700 px-3 py-1 rounded-lg transition-colors">Sobre mi</a>
+        <a href="/contacto" class="text-white hover:bg-gray-700 px-3 py-1 rounded-lg transition-colors">Contacto</a>
+      </div>
+    </nav>
+    <!--Fin del Navbar-->
+
+    <!-- Formulario para acortar URL -->
+    <div class="container mx-auto mt-20 px-4 max-w-2xl">
+        <h1 class="text-5xl font-bold text-center mb-8">URL Shortener</h1>
+        <form id="urlForm" class="flex flex-col md:flex-row gap-4">
+          <input
+            type="text"
+            id="urlInput"
+            placeholder="Ingresar enlace"
+            class="flex-1 p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+          />
+          <button
+            type="submit"
+            class="bg-gray-800 text-white px-10 py-3 rounded-lg hover:bg-gray-700 transition-colors"
+          >
+            Cortar
+          </button>
+        </form>
+      </div>
+    <!-- Fin del Formulario -->   
+ 
+    <h1 class="text-5xl font-bold text-center mt-8 mb-8">¿en que consiste?</h1>
+    <p class="text-center max-w-3xl mx-auto text-lg mt-4">
+        URL Shortener es una aplicación web que permite transformar enlaces largos en versiones cortas y fáciles de compartir. Desarrollada con HTML, Tailwind CSS y JavaScript puro en el frontend, y Node.js con Express en el backend, esta herramienta demuestra habilidades clave como diseño responsivo, manejo de rutas, y lógica de servidor. Ideal para quienes buscan eficiencia, simplicidad y un ejemplo real de desarrollo full stack.
+      </p>
+      
+    <!--Footer-->
+    <footer class="bg-gray-900 text-white py-6 mt-16">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-sm">
+          <p class="text-center md:text-left mb-2 md:mb-0">&copy; 2025 Ethan Mateo. Todos los derechos reservados.</p>
+          <div class="flex gap-4">
+            <a href="https://github.com/Bamder08" target="_blank" class="text-white hover:bg-gray-700 px-3 py-1 rounded-lg transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/mateo-mart%C3%ADnez-92205b336/" target="_blank" class="text-white hover:bg-gray-700 px-3 py-1 rounded-lg transition-colors">Linkedin</a>
+          </div>
+        </div>
+      </footer>
+    <!--Fin del Footer-->    
+  </body>
 </html>
