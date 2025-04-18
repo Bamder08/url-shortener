@@ -1,0 +1,23 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "Un acortador de enlaces simple hecho con HTML, CSS y Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bamder08/url-shortener.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bamder08/url-shortener/issues"
+  },
+  "homepage": "https://github.com/Bamder08/url-shortener#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
