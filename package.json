@@ -19,5 +19,9 @@
   "homepage": "https://github.com/Bamder08/url-shortener#readme",
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
   }
 }
