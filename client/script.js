@@ -9,12 +9,8 @@ document.getElementById('urlForm').addEventListener('submit', async function (e)
       return;
     }
   
-    const BACKEND_URL = window.location.hostname === 'localhost'
-      ? 'http://localhost:3000'
-      : 'https://url-shortener-backend-wxyy.onrender.com';
-  
     try {
-      const res = await fetch(`${BACKEND_URL}/api/shorten`, {
+      const res = await fetch('https://url-shortener-backend-wxyy.onrender.com/api/shorten', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -37,4 +33,5 @@ document.getElementById('urlForm').addEventListener('submit', async function (e)
       console.error('Error al acortar URL:', err);
       alert('Hubo un error. Intenta de nuevo.');
     }
-  });  
+  });
+  
