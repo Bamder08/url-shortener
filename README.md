@@ -48,3 +48,5 @@ Puedes probar la aplicación aquí:
 
 ## Vista previa del proyecto
 ![captura](https://github.com/user-attachments/assets/3d160a85-f95b-433f-befc-3bfa7aa33d53)
+
+Autor: Ethan Mateo Martinez
