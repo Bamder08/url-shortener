@@ -47,3 +47,4 @@ Puedes probar la aplicación aquí:
 - Express.js
 
 ## Vista previa del proyecto
+![captura](https://github.com/user-attachments/assets/3d160a85-f95b-433f-befc-3bfa7aa33d53)
