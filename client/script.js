@@ -10,7 +10,7 @@ document.getElementById('urlForm').addEventListener('submit', async function (e)
     }
   
     try {
-      const res = await fetch('http://localhost:3000/api/shorten', {
+      const res = await fetch('https://url-shortener-backend-wxyy.onrender.com/api/shorten', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
