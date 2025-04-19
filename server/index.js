@@ -1,51 +1,55 @@
-// server/index.js
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs');
+const path = require('path');
+require('dotenv').config(); // <-- usa .env
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const BASE_URL = process.env.BASE_URL || `http://localhost:${PORT}`;
+const DB_PATH = path.join(__dirname, 'urls.json');
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
-const urls = {};
+// Cargar URLs desde el archivo si existe
+let urls = {};
+if (fs.existsSync(DB_PATH)) {
+  urls = JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
+}
 
+// Generador de IDs
 function generarIdAleatorio(longitud = 6) {
-    const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    let id = '';
-    for (let i = 0; i < longitud; i++) {
-      const randomIndex = Math.floor(Math.random() * caracteres.length);
-      id += caracteres[randomIndex];
-    }
-    return id;
-  }
-  
+  const caracteres = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  return Array.from({ length: longitud }, () => caracteres[Math.floor(Math.random() * caracteres.length)]).join('');
+}
 
-// Ruta de prueba
+// POST /api/shorten
 app.post('/api/shorten', (req, res) => {
   const { url } = req.body;
-  console.log('URL recibida:', url);
+  if (!url) return res.status(400).json({ error: 'URL es requerida' });
+
   const id = generarIdAleatorio();
   urls[id] = url;
-  console.log('URL almacenada:', urls[id]);
-  res.json({ id, shortUrl: `http://localhost:3000/${id}` });
+
+  // Guardar en archivo
+  fs.writeFileSync(DB_PATH, JSON.stringify(urls, null, 2));
+
+  res.json({ id, shortUrl: `${BASE_URL}/${id}` });
 });
 
+// GET /:id
 app.get('/:id', (req, res) => {
-    const { id } = req.params;
-    const originalUrl = urls[id];
-  
-    if (originalUrl) {
-      // Si existe, redirige
-      res.redirect(originalUrl);
-    } else {
-      // Si no existe, responde con error
-      res.status(404).send('URL no encontrada');
-    }
-  });
-  
+  const originalUrl = urls[req.params.id];
+  if (originalUrl) {
+    res.redirect(originalUrl);
+  } else {
+    res.status(404).send('URL no encontrada');
+  }
+});
 
 // Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+  console.log(`Servidor escuchando en ${BASE_URL}`);
 });
