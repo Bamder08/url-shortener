@@ -46,7 +46,4 @@ Puedes probar la aplicación aquí:
 - Node.js
 - Express.js
 
-```markdown
-![Vista previa del proyecto](./captura.png)
-
-Autor: Ethan Mateo Martinez
+## Vista previa del proyecto
