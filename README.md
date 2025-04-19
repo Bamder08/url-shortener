@@ -1,12 +1,12 @@
 # URL Shortener
 
-Un **acortador de enlaces** simple y funcional, desarrollado con **HTML**, **CSS**, **Javascript** y **Express**.
+Un **acortador de enlaces** simple y funcional, desarrollado con **HTML**, **Tailwind**, **Javascript** y **Express**.
 
 ## Descripción
 
 Este proyecto permite a los usuarios ingresar una URL larga y obtener un enlace corto para compartir de manera más sencilla. El objetivo principal fue construir una aplicación práctica, minimalista y fácil de usar.
 
-- **Frontend:** HTML, CSS y JavaScript.
+- **Frontend:** HTML, Tailwind y JavaScript.
 - **Backend:** Express.js.
 
 ## Características
@@ -41,9 +41,8 @@ Puedes probar la aplicación aquí:
 
 ## Tecnologías utilizadas
 - HTML5
-- CSS3
-- JavaScript (Frontend)
-- Node.js
+- Tailwind
+- JavaScript
 - Express.js
 
 ## Vista previa del proyecto
